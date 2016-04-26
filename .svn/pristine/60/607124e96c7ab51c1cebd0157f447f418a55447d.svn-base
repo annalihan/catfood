@@ -1,4 +1,0 @@
-//模块模板
-div(node-type="radar", class="radar")
-	canvas(node-type="myCanvas", class="myCanvas") Your browser does not support the canvas element.
-	a(href="bookList", node-type="borrow", class="borrow") 我要借书

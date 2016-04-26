@@ -1,3 +1,0 @@
-ul.myBorrowContent(node-type="myBorrowContent")
-	include borrowDataListLis
-h3.historyBorrowTitle 历史借阅

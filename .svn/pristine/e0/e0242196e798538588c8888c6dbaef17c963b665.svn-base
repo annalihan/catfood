@@ -1,1 +1,0 @@
-steel.d("kit/dom/parseDOM",[],function(a,b,c){STK.register("kit.dom.parseDOM",function(a){return function(a){for(var b in a)a[b]&&1==a[b].length&&(a[b]=a[b][0]);return a}})});

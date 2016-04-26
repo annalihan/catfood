@@ -1,4 +1,0 @@
-ul.dataListContent(node-type="dataListContent")
-    include dataListLis
-    footer(node-type="footer")
-        span 暂无更多了，欢迎贡献

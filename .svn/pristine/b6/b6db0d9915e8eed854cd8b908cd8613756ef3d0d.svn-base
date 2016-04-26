@@ -1,3 +1,0 @@
-//模块模板
-div(s-child, s-tpl="tpl/common/header", s-logic="logic/header", s-data="null")
-div(s-child, s-tpl="tpl/common/input", s-logic="logic/input" s-data="null")
