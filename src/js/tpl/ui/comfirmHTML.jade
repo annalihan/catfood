@@ -1,0 +1,13 @@
+div.blockDiv(node-type="blockDiv")
+div.confirm(node-type="confirm")
+    table(cellspacing="1")
+        tr.confirmMsg
+            td(rowspan="2",colspan="2")
+                p.title #{arg.title}
+                - if(arg.description) {
+                    p.description(node-type="description")
+                - }
+        tr
+        tr.operator
+            td(node-type="button1") #{arg.button1}
+            td(node-type="button2") #{arg.button2}

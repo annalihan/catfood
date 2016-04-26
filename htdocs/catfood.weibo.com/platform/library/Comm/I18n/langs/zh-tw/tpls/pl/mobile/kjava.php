@@ -1,0 +1,22 @@
+<?php
+$lang['client'] = '客戶端'; 
+$lang['phone_list'] = '對應手機品牌：諾基亞、索尼愛立信、三星、摩托、聯想、LG'; 
+$lang['text_1'] = '專為Java平台用戶打造的新浪微博手機客戶端，功能強大。完全支持閱讀、發布、評論、轉發、私信、關注等等現有全部功能，隨時隨地發微博，記錄生活中的點滴，本地相機即拍即傳，記錄生活中的瞬間。 '; 
+$lang['text_2'] = '關注、查找博友，帶給您全新的移動溝通體驗。 '; 
+$lang['download'] = '用手機訪問<a href="/">weibo.cn</a>，進入客戶端頁面下載手機客戶端'; 
+$lang['download_by_brand'] = '按品牌下載'; 
+$lang['my_phone_brand'] = '我的手機品牌'; 
+$lang['my_phone_type'] = '我的手機型號'; 
+$lang['download_now'] = '立即下載'; 
+$lang['download_by_platform'] = '按平台下載'; 
+$lang['choose_version'] = '選擇你要下載的版本，並安裝下載後的Jad和Jar文件才能正常使用'; 
+$lang['comm_type'] = '通用版'; 
+$lang['spec_type'] = '簽名版'; 
+$lang['style'] = '特點'; 
+$lang['style_1'] = '即拍即發：手機拍照一鍵發送。 '; 
+$lang['style_2'] = '節約流量：數據量更小，最多可節約80%。 '; 
+$lang['style_3'] = '多賬號支持：同時添加多個賬號，保存多個賬號信息隨心切換。 '; 
+$lang['style_4'] = '支持客戶端賬號註冊。 '; 
+$lang['style_5'] = '支持橫屏顯示。 '; 
+$lang['style_6'] = '支持CMNET、CMWAP、WiFi等各種類型接入。 ';
+return $lang;

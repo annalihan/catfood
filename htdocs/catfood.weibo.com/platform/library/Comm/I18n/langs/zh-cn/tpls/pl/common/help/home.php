@@ -1,0 +1,20 @@
+<?php
+$lang["newtitle"] = "玩转微博";
+$lang["title"] = "怎样玩转新浪微博？";
+$lang["mobile"] = "手机版";
+$lang["mobile_intr"] = "手机输入";
+$lang["mobile_content"] = "即可使用现有帐号登录。";
+$lang["msg"] = "短信版";
+$lang["msg_intr"] = "免费绑定手机";
+$lang["msg_content"] = "后，通过短信/彩信更新微博。";
+$lang["client"] = "手机客户端";
+$lang["client_content"] = "支持众多机型即拍即传，最多节约流量80%。";
+$lang['view_detail'] = "查看详情»";
+$lang['desktop_weibo'] = "微博桌面";
+$lang['desktop_weibo_content'] = "轻松看微博、疯狂抢沙发、好友聊天更畅快！";
+$lang['mobile_message'] = '短信版：免费绑定手机后，通过短信/彩信更新微博';
+$lang['mobile_wapweibo'] = '手机版：手机输入weibo.cn即可使用现有帐号登录';
+$lang['mobile_desktopweibo'] = '手机客户端：支持众多机型即拍即传，最多节约流量达80%';
+$lang['desktopweibo_message'] = '微博桌面：轻松看微博、疯狂抢沙发、好友聊天更畅快！';
+$lang['little_tips'] = "小贴士" ;
+return $lang;

@@ -1,0 +1,4 @@
+//模块模板
+div(s-child, s-tpl="tpl/common/header", s-data="null",s-logic="logic/header")
+div(s-child, s-tpl="tpl/myBorrowBookList/borrowDataList", s-data="/aj/booklist/mybooklist",s-logic="logic/borrowDataList")
+div(s-child, s-tpl="tpl/common/dataList", s-controller="controller/dataList", s-logic="logic/dataList")

@@ -1,0 +1,21 @@
+div(class="headerTop", node-type="headerTop")
+	- var isLogin = $CONFIG.username;
+	- if(isLogin)
+		a(href="mybooklist")
+			img(src="http://js.catfood.wap.grid.sina.com.cn/css/images/mybook.png", node-type="mybook", class="mybook")
+			i.circlePoint(node-type="circlePoint", style="display:none")
+		img(src="http://js.catfood.wap.grid.sina.com.cn/css/images/back.png", node-type="back", class="back")
+		a(href="index")
+			img(src="http://js.catfood.wap.grid.sina.com.cn/css/images/book_angle.gif", class="book_angle")
+		div(class="user", node-type="user")
+			img(src="http://js.catfood.wap.grid.sina.com.cn/css/images/log.png", node-type="user_image")
+			span(node-type="name", class="name") #{$CONFIG.username}
+		//span(node-type="logout", class="logout") 注销
+	- else
+		a(href="mybooklist",style='display:none;')
+			img(src="http://js.catfood.wap.grid.sina.com.cn/css/images/mybook.png", node-type="mybook", class="mybook")
+		a(href="index")
+			img(src="http://js.catfood.wap.grid.sina.com.cn/css/images/book_angle.gif", class="book_angle")
+		//a(href="login")
+		//	div(class="user", node-type="user")
+		//		img(src="http://js.catfood.wap.grid.sina.com.cn/css/images/log.png", node-type="user_image")

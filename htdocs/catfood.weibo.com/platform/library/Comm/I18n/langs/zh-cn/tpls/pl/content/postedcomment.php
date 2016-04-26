@@ -1,0 +1,22 @@
+<?php
+$lang['title'] = '发出的评论';
+$lang['search_title'] = '查找评论内容或评论人';
+$lang['all'] = '全部';
+$lang['source_mblog'] = '发到微博';
+$lang['source_group'] = '发到微群';
+$lang['comment_count'] = '共<span node-type="commentNum">%s</span>条';
+$lang['back_to_all_comment'] = '返回所有发出的评论';
+$lang['search_result'] = '共找到<span>%s</span>条关于“%s”的结果：';
+$lang['comment_to_title'] = '以下为我发给%s的全部评论';
+$lang['comment_to_pre'] = '你是否要查看：发给';
+$lang['comment_to_suf'] = '的评论';
+$lang['no_search_rst'] = '没有找到符合条件的评论';
+$lang['no_comment'] = '还没有评论';
+$lang['reply'] = '回复';
+$lang['de'] = '的';
+$lang['me'] = '我';
+$lang['comment'] = '评论';
+$lang['mblog'] = '微博';
+$lang['delete'] = '删除';
+$lang['source'] = '来自';
+return $lang;

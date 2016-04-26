@@ -1,0 +1,1 @@
+steel.d("controller/dataList",[],function(a,b,c){c.exports=function(a){var b=STK.queryToJson(location.search&&location.search.substr(1));b.page=b.page||1,b.size=10;var c=window.location.pathname.split("/"),d=c[c.length-1];"bookList"==d?a.set("data","/aj/booklist/booklist?"+STK.jsonToQuery(b)):a.set("data","/aj/booklist/historybooklist?"+STK.jsonToQuery(b))}});

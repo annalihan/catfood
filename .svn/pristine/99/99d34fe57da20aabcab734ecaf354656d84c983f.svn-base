@@ -1,0 +1,21 @@
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0,maximum-scale=1.0, minimum-scale=1.0, user-scalable=no'/>
+    <link rel="stylesheet" href="http://js.catfood.wap.grid.sina.com.cn/css/reset.css"/>
+    <link rel="stylesheet" href="http://js.catfood.wap.grid.sina.com.cn/css/index.css"/>
+    <title>读书角</title>
+    <script>
+        $CONFIG = {
+            baseUrl: 'http://js.catfood.wap.grid.sina.com.cn/',
+            username: null
+        };
+
+    </script>
+</head>
+<body>
+<script src="http://js.catfood.wap.grid.sina.com.cn/js/lib/lib.js"></script>
+<script src="http://js.catfood.wap.grid.sina.com.cn/js/app.js"></script>
+<script>steel.boot('app');</script>
+</body>
+</html>

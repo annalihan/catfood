@@ -1,0 +1,20 @@
+<?php
+return array (
+  'mymessage' => '我的私人訊息',
+  'no_message' => '你還沒有跟任何人發過私人訊息哦',
+  'linkman_count' => '已有%s個聯繫人',
+  'extend' => '<a href="http://service.account.weibo.com/" target="_blank">新浪微博社區管理中心舉報處理大廳，歡迎查閱！</a>',
+  'send_for' => '發給',
+  'new_message' => '條新私人訊息',
+  'reply' => '回复',
+  'report' => '舉報',
+  'page_up' => '上一頁',
+  'page_down' => '下一頁',
+  'message_count' => '共%s條私人訊息',
+  'content'=> '此微博已被原作者刪除',
+  'weiboim'=>'微博聊天',
+  'setread'=>'標記爲已讀',
+  'readpage'=>'標記本頁爲已讀',
+  'quicreply' => '快速回复',
+  'newmsgtip'=>'私信箱新版已上綫，<a href="javascript:void(0);" action-data="uid=2280310413&nick=微博聊天" action-type="webim.conversation">意見反饋請點擊這</a>',
+);

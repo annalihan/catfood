@@ -1,0 +1,20 @@
+<?php
+$lang['title_list'] = '我的收藏';
+$lang['ipt_search'] = '查找微博作者或内容';
+$lang['do_send_mblog'] = '发微博';
+$lang['msg_total'] = '（共%s条）';
+$lang['link_back'] = '返回全部收藏';
+$lang['msg_total_search'] = '共找到<span node-type="serachnum">%s</span>条关于"%s"的结果：';
+$lang['msg_if_find'] = '你是否要在收藏中查找：';
+$lang['msg_who_send'] = '发的微博';
+$lang['msg_no_fav'] = '你还没有收藏任何微博呢！';
+$lang['msg_when_fav'] = '当你发现有意思的、有价值的微博时，赶紧收藏下来哦！';
+$lang['msg_search_none'] = '找不到符合条件的微博，返回';
+$lang['link_see_all'] = '查看全部收藏';
+$lang['search_text'] = '查找作者、内容或标签';
+$lang['all_tag'] = '全部';
+$lang['without_tag'] = '未加标签';
+$lang['fav_tag']= '微博标签';
+$lang['fav_search']= '搜索我的收藏';
+$lang['msg_no_tag'] = '去给收藏的微博加标签吧，可以更方便查看收藏哦！';
+return $lang;

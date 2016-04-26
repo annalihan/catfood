@@ -1,0 +1,23 @@
+<?php
+return array (
+		'ori_repost_num' => '原文轉發',
+		'ori_comment_num' => '原文評論',
+		'del' => '刪除',
+		'repost' => '轉發',
+		'comment' => '評論',
+		'fav' => '收藏',
+		'from' => '來自',
+		'report' => '舉報',
+		'cancel' => '取消',
+		'publish_all' => '公開-你發表的微博可以被大家公開查看哦',
+		'publish_to_me' => '私密-發表的微博只有自己才能看到',
+		'publish_to_me_no_report' => '該條為私密微博，無法轉發',
+		'publish_to_closefriends' => '此微博被作者設置為僅密友可見',
+		'publish_closefriends_no_report' => '該條為僅密友可見微博，無法轉發',
+		'collect' => '採集',
+		'markmblogcannel' => '取消置頂',
+		'markmblogok' => '置頂',
+		'markmblogtext' => '置頂微博',
+		'markmblogtrip' => '微博會員專屬特權',
+		'markmblogtoptext' => '在微博區域置頂顯示',
+		);

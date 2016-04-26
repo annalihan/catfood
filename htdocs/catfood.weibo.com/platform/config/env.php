@@ -1,0 +1,37 @@
+<?php
+
+return array(
+    'platform_api_source' => '908033280',
+    'platform_api_source_mediaweibo' => '2075294883',
+    'platform_api_source_orange_verified' => '2075294883',
+    'platform_api_appsecret' => '00ede82594b98370bf4681cb133eee7f',
+    'idott_api_appid' => 78,
+    'cache_dir' => Comm_Context::getServer('SINASRV_CACHE_DIR'),
+    'data_dir' => Comm_Context::getServer('SINASRV_DATA_DIR'),
+    'css_domain' => 'http://img.t.sinajs.cn/t4/',
+    'css_domain_v5' => "http://img.t.sinajs.cn/t5/",
+    'js_domain' => 'http://js.t.sinajs.cn/t4/',
+    'js_domain_v5' => "http://js.t.sinajs.cn/t5/",
+    'skin_domain' => 'http://img.t.sinajs.cn/t4/',
+    'skin_domain_v5' => "http://img.t.sinajs.cn/t5/",
+    'img_domain' => 'http://img.t.sinajs.cn/t4/',
+    'img_domain_v5' => "http://img.t.sinajs.cn/t5/",
+    'css_domain_pool' => array('http://img.t.sinajs.cn/t4/', 'http://img1.t.sinajs.cn/t4/', 'http://img2.t.sinajs.cn/t4/'),
+    'css_domain_pool_v5' => array("http://img.t.sinajs.cn/t5/", "http://img1.t.sinajs.cn/t5/", "http://img2.t.sinajs.cn/t5/"),   
+    'domain' => 'http://weibo.com/',
+    'search_domain' => 'http://s.weibo.com/',
+    //domain and search_domain will del before 7.7 , pleace use domain.weibo and domain.search
+    'privdata_dir' => Comm_Context::getServer('SINASRV_PRIVDATA_DIR'),
+    'applogs_dir' => Comm_Context::getServer('SINASRV_APPLOGS_DIR'),
+    'version_js' => Tool_Misc::homesiteJsVersion(),
+    'version_css' => Tool_Misc::homesiteCssVersion(),
+    'version_img' => Tool_Misc::homesiteCssVersion(),
+    'version_cookie' => 'wvr',    
+    'version_4' => '4', 
+    'version_36' => '3.6',
+    'version_cookie_en' => 'ewvr', //海外版cookie
+    'privdata_dir_referer' => '/data1/www/privdata/d.e.weibo.com/',
+    'unlogin_reg_user' => 'weibo_v4@sina.com',
+    'unlogin_reg_psw' => 'v4123$%^weibo',
+    'unlogin_simulation_uid' => '2485090863',
+);

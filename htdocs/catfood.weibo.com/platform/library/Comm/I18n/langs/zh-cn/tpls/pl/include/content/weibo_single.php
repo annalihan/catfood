@@ -1,0 +1,24 @@
+<?php
+//$lang = array();
+$lang['view_ori_pic'] = '查看大图';
+$lang['turn_left'] = '向左转';
+$lang['turn_right'] = '向右转';
+$lang['ori_repost'] = '原文转发';
+$lang['ori_comment'] = '原文评论';
+$lang['delete'] = '删除';
+$lang['repost'] = '转发';
+$lang['comment'] = '评论';
+$lang['report'] = '举报';
+$lang['fav'] = '收藏';
+$lang['from'] = '来自';
+$lang['emotion_show'] = '表情预览';
+$lang['create_tag'] = '+加标签';
+$lang['taglist'] = '标签：';
+$lang['publish_all'] = '公开-你发表的微博可以被大家公开查看哦';
+$lang['publish_to_me'] = '私密-发表的微博只有自己才能看到';
+$lang['publish_to_me_no_report'] = '该条为私密微博，无法转发';
+$lang['publish_to_closefriends'] = '此微博被作者设置为仅密友可见';
+$lang['publish_closefriends_no_report'] = '该条为仅密友可见微博，无法转发';
+$lang['collect'] = '采集';
+$lang['attitude'] = '表态';
+return $lang;

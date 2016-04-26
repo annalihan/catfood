@@ -1,0 +1,22 @@
+<?php
+$lang['client'] = '客戶端'; 
+$lang['phone_list'] = '對應手機品牌：BlackBerry黑莓'; 
+$lang['blackberry_client'] = '黑莓客戶端'; 
+$lang['text_1'] = '基於黑莓系統的黑莓版手機客戶端，實現了閱讀、發布、評論、轉發、私信、關注等各主要功能，支持本地相機即拍即傳和新消息提醒。 ';
+$lang['text_2'] = '喜歡微博的你，趕快裝上一個<br>開始真正的隨時隨地“微博”生活吧'; 
+$lang['text_3'] = 'OS前只支持4.7以上的版本<br>用手機訪問<a href="#">weibo.cn</a>，進入客戶端頁面下載手機客戶端'; 
+$lang['download_by_type'] = '按型號下載'; 
+$lang['my_berry_number'] = '我的黑莓手機型號'; 
+$lang['download_now'] = '立即下載'; 
+$lang['download_by_platform'] = '按平台下載'; 
+$lang['platform_desc'] = '下載後需要使Desktop Manager幫助你安裝到手機'; 
+$lang['client_download'] = '黑莓客戶端點擊下載'; 
+$lang['style'] = '特點'; 
+$lang['style_1'] = '即拍即發：手機拍照一鍵發送。 '; 
+$lang['style_2'] = '節約流量：數據量更小，最多可節約80%。 '; 
+$lang['style_3'] = '多帳號支持：同時添加多個帳號，保存多個帳號信息隨心切換。 '; 
+$lang['style_4'] = '支持客戶端賬號註冊。 '; 
+$lang['style_5'] = '支持4.7OS以上版本的各種機型。 '; 
+$lang['style_6'] = '支持TCP直連、WAP、WiFi、BIS、BES等各種類型接入。 '; 
+$lang['style_7'] = '可以在情景模式裡設置提醒鈴聲，LED燈，震動等各種方式。 '; 
+return $lang; 

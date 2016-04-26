@@ -1,0 +1,23 @@
+<?php
+$lang['client'] = 'Windows Phone 客户端';
+$lang['phone_list'] = '对应手机品牌：HTC、三星、LG、戴尔等WP系统手机';
+$lang['text_1'] = '专为Windows Phone/Windows Mobile平台用户打造的新浪微博手机客户端，集阅读、发布、评论、转发、私信、关注等主要功能为一体，本地相机即拍即传，随时随地同朋友分享身边的新鲜事。';
+$lang['text_2'] = '喜欢微博的你，赶快装上一个<br>开始真正的随时随地“微博”生活吧。';
+$lang['download'] = '按平台下载';
+$lang['mt_title'] = 'Windows Phone客户端 即将发布Marketplace';
+$lang['mt_download'] = '点击按钮直接访问Marketplace下载应用，<br>下载成功后用Zune同步安装。';
+$lang['download_3'] = 'Windows Mobile版6.x安装版';
+$lang['download_4'] = 'Windows Mobile版6.x绿色版';
+$lang['download_1'] = 'Windows Mobile版5.x安装版';
+$lang['download_2'] = 'Windows Mobile版5.x绿色版';
+$lang['style'] = '特点';
+$lang['style_1'] = '专为Windows Phone设计：专为Windows Phone设计的软件界面和交互方式。';
+$lang['style_2'] = '既拍既发：手机拍照上传。';
+$lang['style_3'] = '多账号支持：支持多帐号切换和浏览。';
+$lang['style_4'] = '新消息提醒：支持对@我的、评论、私信的新消息提醒。';
+$lang['style_5'] = '多网络支持：支持NET、WAP、WiFi等各类型接入。';
+$lang['style_6'] = '未登录微博广场。';
+$lang['style_7'] = '支持短信注册。';
+$lang['style_8'] = '提供多套皮肤。';
+$lang['style_9'] = '地理位置支持。';
+return $lang;

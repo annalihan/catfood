@@ -1,0 +1,1 @@
+steel.d("controller/myBorrowBookList",[],function(a,b,c){c.exports=function(a){a.set({tpl:"tpl/myBorrowBookList/myBorrowBookList",data:null})}});

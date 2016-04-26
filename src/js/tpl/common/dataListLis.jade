@@ -1,0 +1,36 @@
+- for(var i = 0,len = bookList.length;i < len; i++)
+    li.bookMsgLi
+        div.bookData
+            div.bookImg
+                img(src="#{bookList[i].book_img}")
+            div.bookMsg
+                h3(title="#{bookList[i].book_name}") #{bookList[i].book_name}
+                p #{bookList[i].book_press}
+                p #{bookList[i].book_author}
+                br
+                - switch(bookList[i].book_category)
+                    - case '1':
+                        p.bookType 编程实践
+                    - break;
+                    - case '2':
+                        p.bookType 架构与设计
+                    - break;
+                    - case '3':
+                        p.bookType 思想与领导力
+                    - break;
+                    - case '4':
+                        p.bookType 方法学
+                    - break;
+            - switch(bookList[i].book_status)
+                - case '0':
+                    a.bookOperatorBorrow.bookOperator(href="javascript:void(0);",action-type="operatorClick",action-data="book_id=#{bookList[i].book_id}&book_status=#{bookList[i].book_status}&detail_call_number=#{bookList[i].detail_call_number}") 借
+                - break
+                - case '1':
+                    div.bookOperatorTry.bookOperator 审
+                - break
+                - case '3':
+                    div.bookOperatorLack.bookOperator 缺
+                - break
+                - case '2':
+                    a.bookOperatorReturn.bookOperator(href="javascript:void(0);",action-type="operatorClick",action-data="book_id=#{bookList[i].book_id}&book_status=#{bookList[i].book_status}&detail_call_number=#{bookList[i].detail_call_number}") 还
+                - break

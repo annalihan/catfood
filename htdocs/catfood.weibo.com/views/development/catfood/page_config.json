@@ -1,0 +1,16 @@
+{
+    "index":{
+        "pl_index_head": {
+            "domid": "pl_login",
+            "fun": "FM.view",
+            "js": "",
+            "css": []
+        },
+        "pl_index_content": {
+            "domid": "pl_index_content",
+            "fun": "FM.view",
+            "js": "",
+            "css": []
+        }
+    }
+}

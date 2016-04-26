@@ -1,0 +1,21 @@
+<?php
+return array (
+  'title_list' => '我的收藏',
+  'ipt_search' => '查找微博作者或內容',
+  'do_send_mblog' => '發微博',
+  'msg_total' => '（共%s條）',
+  'link_back' => '返回全部收藏',
+  'msg_total_search' => '共找到<span node-type="serachnum">%s</span>條關於&quot;%s&quot;的結果：',
+  'msg_if_find' => '你是否要在收藏中查找：',
+  'msg_who_send' => '發的微博',
+  'msg_no_fav' => '你還沒有收藏任何微博呢！',
+  'msg_when_fav' => '當你發現有意思的、有價值的微博時，趕緊收藏下來哦！',
+  'msg_search_none' => '找不到符合條件的微博，返回',
+  'link_see_all' => '查看全部收藏',
+  'search_text' => '查找作者、內容或標籤',
+  'del_mblog' => '該微博已被原作者刪除',
+  'all_tag' => '全部',
+  'fav_tag'=>'微博標籤',
+  'fav_search' => '搜索我的收藏',
+  'msg_no_tag' => '去給收藏的微博加標籤吧，可以更方便查看收藏哦！',
+);

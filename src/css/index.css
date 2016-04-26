@@ -1,0 +1,33 @@
+@charset "UTF-8";
+
+
+@import "./header.css";
+@import "./bookList.css";
+@import "./confirm.css";
+@import "./login.css";
+
+body {
+	background: -webkit-gradient(linear, left top, left bottom, from(#009fab), to(#00afa2));
+	width: 100%;
+    color: #fff;
+}
+
+/* 雷达象限图样式 */
+.myCanvas {
+	margin-top: 20%;
+	background: url(../img/logo-20.png) 48% 40% no-repeat;
+	background-size: 73% 35%;
+}
+
+/* 我要借书样式 */
+.borrow {
+	width: 50%;
+	border: 1px solid white;
+	border-radius: 4em;
+	margin: 10% auto;
+	text-align: center;
+	color: #fff;
+	text-decoration: none;
+	display: block;
+	padding: 0.5em 0;
+}

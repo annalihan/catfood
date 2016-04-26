@@ -1,0 +1,9 @@
+div.search
+    div.searchInput(node-type="searchInput")
+        img.searchInputImg(src="http://js.catfood.wap.grid.sina.com.cn/img/search.png")
+        p.placeholder #{searchTextInit}
+    div.searchTextReal(node-type="searchTextReal",style="display:none;")
+        img.searchTextRealImg(src="http://js.catfood.wap.grid.sina.com.cn/img/search.png")
+        div.searchInputBorder
+            input.searchInputReal(type="text",node-type="searchInputReal",maxlength="30")
+        a.searchButton(href="javascript:void(0);" node-type="searchButton") 取消

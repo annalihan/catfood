@@ -1,0 +1,21 @@
+<?php
+return array (
+  'lbl_mytag' => '標籤：',
+  'do_add_tag' => '+加標籤',
+  'lbl_when_fav' => '收藏：',
+  'do_original_repost' => '原文轉發',
+  'do_original_comment' => '原文評論',
+  'do_fav_delete' => '取消收藏',
+  'do_repost' => '轉發',
+  'do_comment' => '評論',
+  'lbl_from' => '來自',
+  'del_mblog' => '该微博已被原作者删除',
+  'publish_all' => '公開-你發表的微博可以被大家公開查看哦',
+  'publish_to_me' => '私密-發表的微博只有自己才能看到',
+  'publish_to_me_no_report' => '該條為私密微博，無法轉發',
+  'publish_to_closefriends' => '此微博被作者設置為僅密友可見',
+  'publish_closefriends_no_report' => '該條為僅密友可見微博，無法轉發',
+  'collect' => '採集',
+  'update' => '保存',
+  'cancel' => '取消',
+);

@@ -1,0 +1,25 @@
+<?php
+$lang['title'] = '收到的评论';
+$lang['search_title'] = '查找评论内容或评论人';
+$lang['all'] = '全部';
+$lang['my_attention'] = '我关注的人';
+$lang['source_mblog'] = '来自微博';
+$lang['source_group'] = '来自微群';
+$lang['comment_count'] = '共<span node-type="commentNum">%s</span>条';
+$lang['back_to_all_comment'] = '返回所有收到的评论';
+$lang['search_result'] = '共找到<span>%s</span>条关于“%s”的结果：';
+$lang['comment_to_pre'] = '你是否要查看：';
+$lang['comment_to_suf'] = '发来的评论';
+$lang['no_search_rst'] = '没有找到符合条件的评论';
+$lang['no_comment'] = '还没有评论';
+$lang['all_comment'] = '所有人可评论';
+$lang['believe_comment'] = '可信用户可评论';
+$lang['att_comment'] = '关注的人可评论';
+$lang['privacy_set'] = '更改设置';
+$lang['privacy_trust_link'] = '由于用户设置，你无法回复评论。<a href="http://account.weibo.com/settings/mobile" target="_blank" >绑定手机</a>后可以更多地参与评论。';
+$lang['privacy_att'] = '由于用户设置，你无法回复评论。';
+$lang['privacy_trust'] = '由于用户设置，你无法回复评论。绑定手机后可以更多地参与评论。';
+$lang['closefriends'] = '密友';
+$lang['no_report_level_mblog'] = '无法转发带有权限的微博。';
+$lang['no_identify'] = '抱歉，请先绑定手机领取"微身份"勋章，帐号更安全，更好的参与评论互动。';
+return $lang;

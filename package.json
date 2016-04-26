@@ -1,0 +1,38 @@
+{
+  "name": "gulp-steel",
+  "version": "0.1.0",
+  "description": "steel",
+  "repository": {},
+  "main": "Gruntfile.js",
+  "scripts": {
+    "start": "./node_modules/gulp/bin/gulp.js server",
+    "test": "grunt"
+  },
+  "keywords": [
+    "weibo"
+  ],
+  "author": [
+    "weibo"
+  ],
+  "license": "GPL",
+  "devDependencies": {
+    "del": "1.1.1",
+    "gulp": "3.9.1",
+    "gulp-clean": "0.3.1",
+    "gulp-concat": "2.5.2",
+    "gulp-jade": "1.0.0",
+    "gulp-load-plugins": "0.10.0",
+    "gulp-minify-css": "1.1.1",
+    "gulp-react": "^3.1.0",
+    "gulp-steel-amd-concat": "*",
+    "gulp-steel-css-fix": "*",
+    "gulp-steel-jadefn-wrap-commonjs": "*",
+    "gulp-steel-server": "*",
+    "gulp-steel-wrap-amd": "*",
+    "gulp-uglify": "^1.2.0",
+    "gulp-util": "*",
+    "jade": "1.7.0",
+    "merge2": "0.3.5",
+    "through2": "*"
+  }
+}

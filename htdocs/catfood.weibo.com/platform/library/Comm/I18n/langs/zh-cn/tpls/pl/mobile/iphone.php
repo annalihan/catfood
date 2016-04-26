@@ -1,0 +1,26 @@
+<?php
+$lang['client'] = '客户端';
+$lang['phone_list'] = '对应手机品牌：苹果iPhone';
+$lang['text_1'] = '基于iPhone、iPod touch平台的iPhone版手机客户端，实现了阅读、发布、评论、转发、私信、关注等各主要功能，支持本地相机即拍即传和新消息提醒，记录点滴生活，分享精彩瞬间。';
+$lang['text_2'] = '记录点滴生活，分享精彩瞬间。';
+$lang['download'] = '点击按钮直接访问APP Store下载应用<br>下载成功后用iTunes同步安装';
+$lang['style'] = '特点';
+$lang['style_1'] = '两种主题模式：列表模式和气泡模式。';
+$lang['style_2'] = '即拍即发：手机拍照一键发送。';
+$lang['style_3'] = '节约流量：数据量更小，最多可节约80%。';
+$lang['style_4'] = '多帐号支持：同时添加多个帐号，保存多个帐号信息随心切换。';
+$lang['style_5'] = '支持客户端帐号注册。';
+$lang['style_6'] = '支持iPhone4 Retina 屏幕高清显示。';
+$lang['style_7'] = '支持地理定位。';
+$lang['style_8'] = '支持CMNET、CMWAP、WiFi等各种类型接入。';
+$lang['style_9'] = '新消息推送功能，将私信实时推送到桌面。';
+$lang['style_10'] = '新增微博"签到"功能。';
+$lang['style_11'] = '设置好友分组。';
+$lang['style_12'] = '新增@我的、评论筛选功能。';
+$lang['style_13'] = '支持@联系人搜索。';
+$lang['style_14'] = '查看好友高清头像。';
+$lang['style_15'] = '支持多语言切换。';
+$lang['style_16'] = '微博信息流字号大小设置。';
+$lang['style_17'] = '支持动态图内容查看。';
+$lang['style_18'] = '优化稳定性。';
+return $lang;

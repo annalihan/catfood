@@ -1,0 +1,1 @@
+steel.d("controller/index",[],function(a,b,c){c.exports=function(a){a.set({tpl:"tpl/index/index",data:null})}});

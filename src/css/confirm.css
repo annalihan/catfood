@@ -1,0 +1,13 @@
+@charset "UTF-8";
+/*弹出框样式*/
+.confirm {position: fixed;top: 30%;left:15%;z-index: 999;width: 70%;height: 8em;border: 1px solid #999;text-align: center;background: rgba(255, 255, 255, 0.8);border-radius: 0.5em;}
+.confirm table {width: 100%;height: 100%;text-align: center;}
+.confirm .title {color: #000;font-size: 1.3em;font-weight: 500;}
+.confirm .description{color: #777;font-size: 1em;}
+.confirm table {width: 100%;height: 100%;border-collapse: collapse;border: 0;}
+.operator td {color: #03B8FD;font-size: 1.3em;width: 50%;cursor: pointer;border-top: 1px solid #999;}
+.operator td:first-child {border-right: 1px solid #777;}
+.confirm td img{display: inline-block;width: 1em;}
+
+/*遮罩样式*/
+.blockDiv{position: fixed;z-index: 998;opacity: 0.1;left: 0;top: 0;height: 100%;width: 100%;background: #BDBDBD;}

@@ -1,0 +1,20 @@
+<?php
+$lang['repost_to_weibo'] = '转发到微博';
+$lang['repost_to_message'] = '转发到私信';
+$lang['repost_to_qun'] = '转发到微群';
+$lang['repost_as_well'] = '同时转发到我的微博';
+$lang['comment_as_well'] = '同时评论给';
+$lang['comment'] = '评论';
+$lang['forward'] = '转发';
+$lang['all'] = '全部';
+$lang['attentioner'] = '关注的人';
+$lang['stranger'] = '陌生人';
+$lang['vip'] = '认证用户';
+$lang['common'] = '共同评论';
+$lang['no_report'] = '无法转发带有权限的微博。';
+$lang['attitude'] = '表态';
+$lang['text_comment'] = '快速评论';
+$lang['no_attitude'] = '还没有人对这条微博表态哦';
+$lang['show_more'] = '展开';
+$lang['put_away'] = '收起';
+return $lang;

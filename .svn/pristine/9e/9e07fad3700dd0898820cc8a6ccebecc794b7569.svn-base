@@ -1,0 +1,1 @@
+steel.d("controller/login",[],function(a,b,c){c.exports=function(a){a.set({tpl:"tpl/login/login",data:null})}});

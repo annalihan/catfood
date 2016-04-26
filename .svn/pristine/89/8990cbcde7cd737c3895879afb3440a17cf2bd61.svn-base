@@ -1,0 +1,23 @@
+<?php
+return array (
+  'not_your_follow' => '抱歉，TA還不是你關註的人哦，感興趣的話先關註啦。',
+  'not_your_fans' => '對不起，TA還不是你的粉絲呢，要不要求個關註呢？',
+  'system_error' => '系統繁忙，請稍候再試吧。',
+  'create_exist_group' => '餵，此分組名已經存在啦。',
+  'modify_exist_group' => '此分組名已存在。',
+  'follow_exists' => '餵，你們已經是相互關註啦。',
+  'user_must_select' => '請至少選擇1位用戶才可以進行操作哦。',
+  'following_failed' => '抱歉，關註失敗(>_<) ，稍後再試啦。',
+  'following_failed_uid_limit' => 'hi超人，您今天已經關註（或取消關註）太多人啦，請明天再繼續吧！<a href="http://help.weibo.com/faq/q/77/12572#12572">查看帮助</a><br>如需帮助，請<a href="http://help.weibo.com/self/query?typeid=1034">聯係客服</a>。',
+  'following_failed_ip_limit' => '當前您所在的網絡環境存在大量惡意關注的行為，暫時無法完成此操作。<a href="http://help.weibo.com/faq/q/77/12573#12573">查看幫助 </a><br>想要解除限制，建議您<a href="http://account.weibo.com/set/mobile">綁定手機</a>或<a href="http://help.weibo.com/self/query?typeid=1034">聯系客服 </a>。',
+  'following_failed_before_remove_blacklist' => '你已經把此用戶加入黑名單，加關註前請先解除。',
+  'exists_in_blacklist_follow_failed' => '根據對方設置，你不能進行該操作。',
+  'remove_fans_failed' => '抱歉，移除粉絲失敗(>_<) ，稍後再試啦。',
+  'unfollowing_failed' => '抱歉，取消關註失敗(>_<) ，稍後再試啦。',
+  'update_group_maxleng' => '請不要超過16個字符',
+  'update_group_maxleng_desc' => '描述請不要超過140個字符',
+  'update_group_maxleng_tags' => '標籤請不要超過14個字符',
+  'update_group_maxmun_tags' => '標籤請不要超過10個',
+  'follow_group_no_power' => '根據對方設置，你無權關注該分組 ',
+ 'closefriend_failed_before_remove_blacklist' => '請先把此用戶從黑名單放出來再加密友吧^-^',
+);
