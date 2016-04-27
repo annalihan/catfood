@@ -26,7 +26,7 @@ steel.config({
     router: [
         ['/catfood/', 'components/main/index/ctrl'],
         ['/catfood/index', 'components/main/index/ctrl'],
-        ['/catfood/booklist', 'components/bookList/index/ctrl'],
+        ['/catfood/bookList', 'components/bookList/index/ctrl'],
         ['/catfood/login', 'components/login/index/ctrl'],
         ['/catfood/mybooklist', 'components/myBookList/index/ctrl']
     ]

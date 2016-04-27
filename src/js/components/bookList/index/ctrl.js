@@ -4,6 +4,7 @@
 module.exports = function(control) {
     control.set({
         data: null,
-        tpl: 'tpl/bookList/bookList'
+        component: './main'
+        // tpl: 'tpl/bookList/bookList'
     });
 };
