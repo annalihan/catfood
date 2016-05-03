@@ -47,7 +47,6 @@ if (isHTML5) {
 function log() {
     var console = window.console;
     //只有debug模式打日志
-    isDebug = false;
     if (!isDebug || !console) {
         return;
     }
@@ -129,11 +128,11 @@ var require_global_loadingNum = 0;
  * parse URL
  * @method core_parseURL
  * @private
- * @param {string} str 
- *    可以传入 protocol//host 当protocol不写时使用location.protocol; 
+ * @param {string} str
+ *    可以传入 protocol//host 当protocol不写时使用location.protocol;
  * @return {object}
  * @example
- * core_parseURL( 'http://t.sina.com.cn/profile?beijing=huanyingni' ) === 
+ * core_parseURL( 'http://t.sina.com.cn/profile?beijing=huanyingni' ) ===
     {
         hash : ''
         host : 't.sina.com.cn'
@@ -236,8 +235,8 @@ function core_object_extend(target, key, value) {
 }
 /**
  * 判断地址中是否有协议
- * @param  {string} url 
- * @return {boolean} 
+ * @param  {string} url
+ * @return {boolean}
  */
 function core_hasProtocol(url) {
     return /^([a-z]+:)?\/\/\w+/i.test(url);
@@ -315,7 +314,7 @@ function core_fixUrl_handleTwoDots(url) {
  * @id  core_URL
  * @alias
  * @param {String} url
- * @param {Object} 
+ * @param {Object}
     {
         'isEncodeQuery'  : {Boolean}, //对query编码
         'isEncodeHash'   : {Boolean}  //对hash编码
@@ -343,7 +342,7 @@ function core_fixUrl_handleTwoDots(url) {
 /*
  * 合并参数，不影响源
  * @param {Object} oSource 需要被赋值参数的对象
- * @param {Object} oParams 传入的参数对象 
+ * @param {Object} oParams 传入的参数对象
  * @param {Boolean} isown 是否仅复制自身成员，不复制prototype，默认为false，会复制prototype
 */
 function core_object_parseParam(oSource, oParams, isown){
@@ -498,10 +497,10 @@ function core_uniqueID( obj ) {
  * 返回在数组中的索引
  * @method core_array_indexOf
  * @private
- * @param {Array} oElement 
- * @param {Any} oElement 
+ * @param {Array} oElement
+ * @param {Any} oElement
  *  需要查找的对象
- * @return {Number} 
+ * @return {Number}
  *  在数组中的索引,-1为未找到
  */
 function core_array_indexOf( oElement, aSource ) {
@@ -522,7 +521,7 @@ function core_array_indexOf( oElement, aSource ) {
  * @private
  * @param {arrayLike} obj
  *  需要查找的对象
- * @return {Array} 
+ * @return {Array}
  */
 function core_array_makeArray( obj ) {
     return slice.call(obj, 0, obj.length);
@@ -575,11 +574,7 @@ function core_notice_trigger( type ) {
     var args = core_array_makeArray(arguments);
     args = args.slice(1, args.length);
     for ( var i = typeArray.length - 1; i > -1; i-- ) {
-        try {
-            typeArray[ i ] && typeArray[ i ].apply( undefined, args );
-        } catch ( e ) {
-            type != logNotice && core_notice_trigger( logNotice, ['[error][notice][' + type + ']', e] );
-        }
+        typeArray[ i ] && typeArray[ i ].apply( undefined, args );
     }
 }
 
@@ -665,7 +660,7 @@ var router_base_currentHref = location.toString();
  * @param {string} type
  * @param {string} fn
  */
-var core_event_addEventListener = isAddEventListener ? 
+var core_event_addEventListener = isAddEventListener ?
     function( el, type, fn, useCapture) {
         el.addEventListener( type, fn, useCapture === undefined ? false : useCapture);
     }
@@ -716,7 +711,7 @@ function core_dom_ready( handler ) {
  * preventDefault
  * @method core_event_preventDefault
  * @private
- * @return {Event} e 
+ * @return {Event} e
  */
 function core_event_preventDefault( event ) {
     if ( event.preventDefault ) {
@@ -873,11 +868,7 @@ function render_error() {
 }
 /*
  * control核心逻辑
- */
-
-
-
-/*
+ *//*
  * 给节点设置属性
  * @method core_dom_getAttribute
  * @private
@@ -886,7 +877,6 @@ function render_error() {
 function core_dom_getAttribute( el, name ) {
     return el.getAttribute( name );
 }
-
 /*
  * 对象克隆
  * @method core_object_clone
@@ -907,7 +897,6 @@ function core_object_clone( obj ) {
     }
     return ret;
 }
-
 /*
  * 返回指定ID或者DOM的节点句柄
  * @method core_dom_removeNode
@@ -925,13 +914,12 @@ function core_dom_removeNode( node ) {
 
 
 
-
 /**
  * 模块渲染和运行时的错误触发
  * @param  {object} resContainer 资源容器
  * @param  {string} type         错误类型
  * @param  {any} ...         错误信息
- * @return {undefined}          
+ * @return {undefined}
  */
 function render_control_triggerError(resContainer, type) {
     var args = core_array_makeArray(arguments).slice(1);
@@ -1036,12 +1024,9 @@ function core_object_isEmpty(o,isprototype){
 
 
 
-
-
 function core_array_inArray(oElement, aSource){
     return core_array_indexOf(oElement, aSource) > -1;
-}
-/**
+}/**
  * 场景管理
  * 第一版本实现目标：
  *//*
@@ -1609,7 +1594,7 @@ function render_parse(jadeFunStr) {
         result.push({
             's-stage-scroll': true,
             's-all': g[1].replace(/\\\"/g, '"'),
-            's-id': render_base_idMaker(),
+            's-id': render_base_idMaker()
         });
     }
     return result;
@@ -1745,18 +1730,19 @@ function render_control_render(resContainer) {
     render_control_triggerRendered(boxId);
 }
 function render_control_component_render(resContainer) {
+    console.log(resContainer);
     if(!resContainer.componentReady || !resContainer.cssReady || resContainer.rendered){
         return;
     }
-    var boxId = resContainer.boxId;    
+    var boxId = resContainer.boxId;
     var real_data = resContainer.real_data;
     var virtualDom = resContainer.virtualDom;
     if (!virtualDom) {
         try {
-            resContainer.virtualDom = ReactDOM.render( 
+            resContainer.virtualDom = ReactDOM.render(
                 React.createElement(resContainer.component, {data:real_data}, null),
                 getElementById(boxId)
-            );  
+            );
         } catch (e) {
             render_error(e);
             render_control_triggerError(resContainer, 'render', e);
@@ -1880,10 +1866,6 @@ function render_control_destroyChildren(childrenid) {
 
 
 
-
-
-
-
 function render_control_setTpl(resContainer) {
     var controllerNs = render_base_controllerNs[resContainer.boxId];
     var tplCallbackFn;
@@ -1920,7 +1902,6 @@ function render_control_setTpl_toRender(resContainer) {
     resContainer.tplReady = true;
     render_control_render(resContainer);
 }
-
 
 
 
@@ -2086,8 +2067,6 @@ function render_control_setComponent_toRender(resContainer) {
     resContainer.componentReady = true;
     render_control_render(resContainer);
 }
-
-
 
 //检查资源是否改变
 function render_control_checkResChanged(resContainer, type, value) {
@@ -2296,12 +2275,6 @@ function render_control_main(boxId) {
         resContainer.childrenChanged && render_control_setChildren(resContainer);
     }
 }
-
-
-
-
-
-
 var render_run_controllerLoadFn = {};
 var render_run_rootScope = {};
 var render_run_renderingMap = {};
@@ -2463,6 +2436,10 @@ function router_listen() {
     core_event_addEventListener(window, 'popstate', function() {
         core_notice_trigger('popstate');
         var currentStateIndex = router_history_getStateIndex();
+        if (router_listen_lastStateIndex === currentStateIndex || router_base_currentHref === href) {
+            return;
+        }
+        var href = location.href;
         if (router_listen_lastStateIndex > currentStateIndex) {
             if (router_base_routerType === 'refresh') {
                 router_base_routerType = 'back-refresh';
@@ -2473,16 +2450,8 @@ function router_listen() {
             router_base_routerType = 'forward';
         }
         router_listen_lastStateIndex = currentStateIndex;
-        var href = location.href;
-        if (popstateTime === 0 && router_base_currentHref === href) {
-            return;
-        }
         router_listen_handleHrefChenged(href);
     });
-    setTimeout(function() {
-        popstateTime = 1;
-    }, 1000);
-    //popstate 事件在第一次被绑定时也会触发，但不是100%，所以加了个延时
 }
 function router_listen_getHrefNode(el) {
     if (el && router_listen_count < router_listen_queryTime) {
@@ -2554,7 +2523,7 @@ function router_router_get(refreshRouterValue) {
  * 路由前进到某个地址
  * @param  {string} url 页面地址
  * @param  {Object} data 想要传递到新页面的对象
- * @return {undefined} 
+ * @return {undefined}
  */
 function router_router_push(url, data) {
     router_router_set(url, data);
@@ -2573,7 +2542,7 @@ function router_router_replace(url, data) {
  * @param  {string} url     地址 必添
  * @param  {boolean} replace 是否替换当前页面 不产生历史
  * @param  {Object} data 想要传递到新页面的对象
- * @return {undefined} 
+ * @return {undefined}
  */
 function router_router_set(url, replace, data) {
     //多态
@@ -2608,7 +2577,7 @@ function router_router_set(url, replace, data) {
 }
 /**
  * 单页面刷新
- * @return {undefined} 
+ * @return {undefined}
  */
 function router_router_refresh() {
     if (router_base_singlePage) {
@@ -2735,18 +2704,18 @@ function resource_fixUrl_handle(path, url, basePath, hrefPath) {
 }
 
 /**
- * 异步调用方法 
+ * 异步调用方法
  */
 function core_asyncCall(fn, args) {
     setTimeout(function() {
         fn.apply(undefined, args);
     });
 }
-/** 
+/**
  * 资源队列管理
  * @params
  * url 请求资源地址
- * succ 
+ * succ
  * err
  * access 是否成功
  * data 资源数据
@@ -2761,13 +2730,7 @@ function resource_queue_run(url, access, data){
     access = access ? 0 : 1;
     for(var i = 0, len = resource_queue_list[url].length; i < len; i++) {
         var item = resource_queue_list[url][i];
-        try {
-            item[access](data, url);
-        } catch(e) {
-            core_asyncCall(function(item) {
-                item[1](data, url);
-            }, [item]);
-        }
+        item[access](data, url);
     }
 }
 function resource_queue_del(url) {
@@ -2790,7 +2753,7 @@ function resource_queue_del(url) {
         'contentType': 'application/x-www-form-urlencoded',
         'responseType': 'text'// xml or text or json
     };
- * @return {Void} 
+ * @return {Void}
  * @example
  * loader_ajax(url, {//'url':'/ajax.php',
     'args':{'id':123,'test':'true'},
@@ -2902,15 +2865,15 @@ function loader_ajax(url, onComplete, onFail){//(url, callback)
         var _XHR = false;
         try {
             _XHR = new XMLHttpRequest();
-        } 
+        }
         catch (try_MS) {
             try {
                 _XHR = new ActiveXObject("Msxml2.XMLHTTP");
-            } 
+            }
             catch (other_MS) {
                 try {
                     _XHR = new ActiveXObject("Microsoft.XMLHTTP");
-                } 
+                }
                 catch (failed) {
                     _XHR = false;
                 }
@@ -3037,7 +3000,7 @@ function resource_preLoad_setRes(url, type, complete, success, fail) {
 }
 /**
  * 得到预加载的资源
- * @param  {string} url 
+ * @param  {string} url
  */
 function resource_preLoad_get(url) {
     return resource_preLoad_resMap[url];
@@ -3197,7 +3160,6 @@ var resource_res = {
 };
 function resource_res_handle(type, name, succ, err) {
     var nameObj = resource_preLoad_get(name);
-    log('Info:', name, !!nameObj);
     if (router_router_get().type === 'init' && nameObj) {
         if (nameObj.complete) {
             if (nameObj.success) {
@@ -3388,7 +3350,7 @@ function require_define(ns, deps, construtor) {
 }
 
 
- 
+
 
 
 //暂不做
@@ -3401,11 +3363,10 @@ config_push(function (parseParamFn) {
     resource_base_apiRule = parseParamFn('defApiRule', resource_base_apiRule);
     resource_base_version = parseParamFn('version', resource_base_version);
 });
-
 function resource_boot() {
     resource_preLoad_bootLoad();
 }
- 
+
 /**
  * 渲染管理器的主页面
  */
@@ -3437,7 +3398,7 @@ config_push(function(parseParamFn) {
 function render_boot() {
     render_stage_init();
 }
- 
+
 /**
  * 路由配置
  */
@@ -3690,7 +3651,6 @@ function router_boot() {
     //浏览器支持HTML5，且应用设置为单页面应用时，绑定路由侦听； @shaobo3
     isHTML5 && router_base_singlePage && router_listen();
 }
-
   config_push(function(parseParamFn, config) {
     isDebug = parseParamFn('debug', isDebug);
     logLevel = parseParamFn('logLevel', logLevel);
@@ -3735,7 +3695,8 @@ function router_boot() {
     log("Info: routerChange", mainBox, controller, routerValue.type);
   });
   window.steel = steel;
-}(window);/*!
+}(window);
+/*!
  * react-lite.js v0.15.9
  * (c) 2016 Jade Gu
  * Released under the MIT License.
@@ -5768,7 +5729,26 @@ function router_boot() {
   }, ReactDOM);
   React.__SECRET_DOM_DO_NOT_USE_OR_YOU_WILL_BE_FIRED = ReactDOM;
   return React;
-}));/**
+}));
+;
+ (function(f) {
+         var g;
+         if (typeof window !== "undefined") {
+             g = window;
+         } else if (typeof global !== "undefined") {
+             g = global;
+         } else if (typeof self !== "undefined") {
+             g = self;
+         } else {
+             // works providing we're not in "use strict";
+             // needed for Java 8 Nashorn
+             // see https://github.com/facebook/react/issues/3037
+             g = this;
+         }
+         g.ReactDOM = f(g.React);
+ })(function(React) {
+     return React.__SECRET_DOM_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+ });/**
   * ReactDOM v15.0.0-rc.2
   *
   * Copyright 2013-present, Facebook, Inc.
