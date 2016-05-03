@@ -270,261 +270,83 @@ exports.rethrow = function rethrow(err, filename, lineno, str){
     throw err;
 };
 });
-steel.d("tpl/common/loading", ["tpl/runtime"],function(require, exports, module) {
+steel.d("tpl/myBookList/borrowDataList", ["tpl/runtime"],function(require, exports, module) {
 var jade = require('tpl/runtime');
 var undefined = void 0;
 module.exports = function template(locals) {
 var buf = [];
 var jade_mixins = {};
 var jade_interp;
-;var locals_for_with = (locals || {});(function (text) {
-buf.push("<div style=\"padding: 10px 0;text-align: center;width: 100%;overflow:hidden;\" class=\"E_load\"><em class=\"icon_load_loading\"></em><span>" + (jade.escape((jade_interp = text) == null ? '' : jade_interp)) + "</span></div>");}.call(this,"text" in locals_for_with?locals_for_with.text:typeof text!=="undefined"?text:undefined));;return buf.join("");
-};
-});
-steel.d("util/parseParam", [],function(require, exports, module) {
-/**
- * 
- */
-
-module.exports = function(target, obj) {
-	return $.extend({}, target, obj);
-};
-});
-steel.d("tpl/ui/tip", ["tpl/runtime"],function(require, exports, module) {
-var jade = require('tpl/runtime');
-var undefined = void 0;
-module.exports = function template(locals) {
-var buf = [];
-var jade_mixins = {};
-var jade_interp;
-;var locals_for_with = (locals || {});(function (document, auto, type, text) {
-var winWidth = document.documentElement.clientWidth;
-var left = (winWidth > 640 ? auto : 0);
-buf.push("<div" + (jade.attr("style", "position:fixed;top:0;left:" + (left) + "px;background-color:rgba(255,255,255,0);width:100%;height:100%;max-width: 640px;z-index:5000;", true, false)) + "></div><div style=\"position:fixed;max-width: 640px;z-index: 9000;\" class=\"E_layer_tips\">");
-if (type === 'loading')
+;var locals_for_with = (locals || {});(function (bookList, Date) {
+buf.push("<ul node-type=\"myBorrowContent\" class=\"myBorrowContent\">");
+for(var i = 0,len = bookList.length;i < len; i++)
 {
-buf.push("<div class=\"content\"><em class=\"icon_load_loading\"></em><p>" + (((jade_interp = text) == null ? '' : jade_interp)) + "</p></div>");
-}
-else
+buf.push("<li class=\"bookMsgLi\"><div class=\"bookData\"><div class=\"bookImg\"><img" + (jade.attr("src", "" + (bookList[i].book_img) + "", true, false)) + "/></div><div class=\"bookMsg\"><h3>" + (jade.escape((jade_interp = bookList[i].book_name) == null ? '' : jade_interp)) + "</h3><p>" + (jade.escape((jade_interp = bookList[i].book_press) == null ? '' : jade_interp)) + "</p><p>" + (jade.escape((jade_interp = bookList[i].book_author) == null ? '' : jade_interp)) + "</p><br/>");
+switch(bookList[i].book_category)
 {
-var iconClass = 'icon_tip_' + type;
-buf.push("<div class=\"content layer_tips_common\"><em" + (jade.cls(["" + (iconClass) + ""], [true])) + "></em><p>" + (((jade_interp = text) == null ? '' : jade_interp)) + "</p></div>");
+case '1':
+{
+buf.push("<p class=\"bookType\">编程实践</p>");
 }
-buf.push("</div>");}.call(this,"document" in locals_for_with?locals_for_with.document:typeof document!=="undefined"?document:undefined,"auto" in locals_for_with?locals_for_with.auto:typeof auto!=="undefined"?auto:undefined,"type" in locals_for_with?locals_for_with.type:typeof type!=="undefined"?type:undefined,"text" in locals_for_with?locals_for_with.text:typeof text!=="undefined"?text:undefined));;return buf.join("");
-};
-});
-steel.d("ui/tip", ["util/parseParam","tpl/ui/tip"],function(require, exports, module) {
-/**
- * 提示层
- */
-
-var parseParam = require('util/parseParam');
-var tipTPL = require('tpl/ui/tip');
-
-module.exports = function(text, options) {
-    var bodyBox = steel.stage.getBox();
-
-    options = parseParam({
-        type: 'succ',//succ/err/warn/loading
-        autoHide: 2000,//number/false
-        end: null,
-        mask: true
-    }, options);
-    options.text = text || '提示';
-
-    var outer;
-    var maskNode;
-    var tipNode;
-    var hideTimer;
-    show();
-
-    if(options.autoHide) {
-    	hideTimer = setTimeout(hide, options.autoHide);
-    }
-
-	var that = {
-		show: show,
-		hide: hide
-	};
-
-    return that;
-
-
-    function show() {
-
-        outer = $(tipTPL(options));
-        
-        $(bodyBox).append(outer);
-
-        outer.on('touchmove', function(e) {
-            e.preventDefault();
-            return false;
-        });
-        if (options.type !== 'loading') {
-            outer.on('tap', function(e) {
-                e.stopPropagation();
-                hide();
-            });
-        }
-
-        maskNode = outer.eq(0);
-        tipNode = outer.eq(1);
-        reset();
-        tipNode.fadeIn(50);
-    }
-
-    function hide() {
-        clearTimeout(hideTimer);
-        outer.off();
-        tipNode.fadeOut(50, function() {
-            outer.remove();
-            options.end && options.end();
-            options = outer = maskNode = tipNode = undefined;
-        });
-    }
-
-    function reset() {
-        var winHeight = $(window).height();
-        var winWidth = $(window).width();
-
-		var top = (winHeight - tipNode.height()) * 0.382;
-		var left = (winWidth - tipNode.width()) / 2;
-		top = top > 0 ? top : 0;
-		left = left > 0 ? left : 0;
-
-        maskNode.css({
-            width: winWidth,
-            height: '100%'
-        });
-
-		tipNode.css({
-			top: top + 'px',
-			left: left + 'px'
-		});
-	}
-};
-});
-steel.d("components/main/index/ctrl", [],function(require, exports, module) {
-/**
- * 模块控制器
- */
-
-module.exports = function(control) {
-    control.set({
-        tpl: 'tpl/index/index',
-        data:null
-    });
-};
-});
-steel.d("components/bookList/index/ctrl", [],function(require, exports, module) {
-/**
- * 图书列表
- */
-module.exports = function(control) {
-    control.set({
-        data: null,
-        component: './main'
-    });
-};
-});
-steel.d("components/login/index/ctrl", [],function(require, exports, module) {
-/**
- * 模块控制器
- */
-
-module.exports = function(control) {
-    control.set({
-        tpl: 'tpl/login/login',
-        data:null
-    });
-};
-});
-steel.d("components/myBookList/index/ctrl", [],function(require, exports, module) {
-/**
- * 模块控制器
- */
-
-module.exports = function(control) {
-    control.set({
-        tpl: 'tpl/myBookList/myBookList',
-        data: null
-    });
-};
-});
-steel.d("app", ["tpl/common/loading","ui/tip","components/main/index/ctrl","components/bookList/index/ctrl","components/login/index/ctrl","components/myBookList/index/ctrl"],function(require, exports, module) {
-/**
- * 应用入口文件
- */
-
-var $CONFIG = window.$CONFIG || {};
-var loadingTpl = require('tpl/common/loading');
-var uiTip = require('ui/tip');
-
-require('components/main/index/ctrl');
-require('components/bookList/index/ctrl');
-require('components/login/index/ctrl');
-require('components/myBookList/index/ctrl');
-
-steel.config({
-    version: 0,
-    basePath: $CONFIG.baseUrl,
-    jsPath: $CONFIG.baseUrl + 'js/',
-    cssPath: $CONFIG.baseUrl + '/css/',
-    ajaxPath: 'http://' + location.host + '/',
-    mainBox: document.getElementById('content'),
-    singlePage: true,
-    stage: true,
-    stageCache: true,
-    stageChange: true,
-    useCssPrefix: true,
-    router: [
-        ['/catfood/', 'components/main/index/ctrl'],
-        ['/catfood/index', 'components/main/index/ctrl'],
-        ['/catfood/bookList', 'components/bookList/index/ctrl'],
-        ['/catfood/login', 'components/login/index/ctrl'],
-        ['/catfood/mybooklist', 'components/myBookList/index/ctrl']
-    ]
-});
-
-var preview = $('#preview');
-steel.on('stageChange', function(box, renderFromStageCache) {
-    var routerType = steel.router.get().type;
-    if ((!preview.length && routerType === 'init') || routerType === 'forward' || routerType === 'new'  || routerType === 'replace') {
-        box.innerHTML = loadingTpl({
-            text: '加载中...'
-        });
-    }
-});
-
-//监听渲染事件
-steel.on('renderError', pageError);
-
-function pageError(res) {
-    steel.stage.getBox().innerHTML = '';
-    uiTip(res && res.msg || '数据异常', {
-        type: 'warn',
-        autoHide: 0
-    });
-    if (res && (res.code + '') === '100002') {
-        location.href = '/catfood/login?r=' + encodeURIComponent(location.href);
-    }
+break;
+case '2':
+{
+buf.push("<p class=\"bookType\">架构与设计</p>");
 }
-
-//监听最后一个模块domready完成事件
-steel.on('allDomReady', function() {
-    preview.hide();
-    if (steel.isDebug) {
-        return;
-    }
-
-});
-
-steel.on('ajaxTime', function(obj) {
-    if (steel.isDebug) {
-        return;
-    }
-});
-
-
-
+break;
+case '3':
+{
+buf.push("<p class=\"bookType\">思想与领导力</p>");
+}
+break;
+case '4':
+{
+buf.push("<p class=\"bookType\">方法学</p>");
+}
+break;
+}
+buf.push("</div>");
+switch(bookList[i].book_status)
+{
+case '0':
+{
+buf.push("<a href=\"javascript:void(0);\" action-type=\"operatorClick\"" + (jade.attr("action-data", "book_id=" + (bookList[i].book_id) + "&book_status=" + (bookList[i].book_status) + "&detail_call_number=" + (bookList[i].detail_call_number) + "", true, false)) + " class=\"bookOperatorBorrow bookOperator\">借</a>");
+}
+break
+case '1':
+{
+buf.push("<div class=\"bookOperatorTry bookOperator\">审</div>");
+}
+break
+case '3':
+{
+buf.push("<div class=\"bookOperatorLack bookOperator\">缺</div>");
+}
+break
+case '2':
+{
+buf.push("<a href=\"javascript:void(0);\" action-type=\"operatorClick\"" + (jade.attr("action-data", "book_id=" + (bookList[i].book_id) + "&book_status=" + (bookList[i].book_status) + "&detail_call_number=" + (bookList[i].detail_call_number) + "", true, false)) + " class=\"bookOperatorReturn bookOperator\">还</a>");
+}
+break
+}
+buf.push("</div><div style=\"clear:both;\"></div><img src=\"http://js.catfood.wap.grid.sina.com.cn/img/tri-angle.png\" class=\"bookBorrowImg\"/><div class=\"bookBorrowMeg\"><table><tr class=\"bookMsgTitle\"><td>借阅时间</td><td>到期时间</td><td>状态</td></tr><tr>");
+var date = bookList[i].borrow_date.split(' ')[0];
+var deadline = bookList[i].borrow_deadline.split(' ')[0];
+var time = bookList[i].borrow_deadline.replace(/-/g,'/');
+var deadDate = new Date(time);
+buf.push("<td>" + (jade.escape((jade_interp = date) == null ? '' : jade_interp)) + "</td><td>" + (jade.escape((jade_interp = deadline) == null ? '' : jade_interp)) + "</td>");
+if(deadDate > new Date()){
+{
+buf.push("<td>正常</td>");
+}
+}
+else {
+{
+buf.push("<td>逾期</td>");
+}
+}
+buf.push("</tr></table></div></li>");
+}
+buf.push("</ul><h3 class=\"historyBorrowTitle\">历史借阅</h3>");}.call(this,"bookList" in locals_for_with?locals_for_with.bookList:typeof bookList!=="undefined"?bookList:undefined,"Date" in locals_for_with?locals_for_with.Date:typeof Date!=="undefined"?Date:undefined));;return buf.join("");
+};
 });

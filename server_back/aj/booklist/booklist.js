@@ -4,7 +4,7 @@
 module.exports = {
     method: 'GET',
     data: {
-        "code": 100000,
+        "code": '100000',
         "data": {
             bookList: [
                 {
