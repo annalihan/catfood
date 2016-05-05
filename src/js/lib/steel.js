@@ -1670,8 +1670,8 @@ var render_control_render_moduleAttrValue = 'ismodule';
 function render_control_render(resContainer) {
     //如果是react组件，执行react_render逻辑
     if(resContainer.component){
-        log("render_control_component_render",resContainer);
         render_control_component_render(resContainer);
+        return;
     }
     var boxId = resContainer.boxId;
     if ( !resContainer.dataReady || !resContainer.tplReady || resContainer.rendered) {
@@ -1730,7 +1730,7 @@ function render_control_render(resContainer) {
     render_control_triggerRendered(boxId);
 }
 function render_control_component_render(resContainer) {
-    console.log(resContainer);
+    // console.log(resContainer);
     if(!resContainer.componentReady || !resContainer.cssReady || resContainer.rendered){
         return;
     }
@@ -1740,8 +1740,9 @@ function render_control_component_render(resContainer) {
     if (!virtualDom) {
         try {
             resContainer.virtualDom = ReactDOM.render(
-                React.createElement(resContainer.component, {data:real_data}, null),
-                getElementById(boxId)
+                // React.createElement('h1', null, 'Hello, world!'),
+                React.createElement(resContainer.component, {data:real_data},null),
+                document.getElementById(boxId)
             );
         } catch (e) {
             render_error(e);

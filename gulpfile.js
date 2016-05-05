@@ -122,7 +122,7 @@ function dealJs(isDebug) {
         debugConfig = '';
     }
     return merge2(
-        gulp.src(['src/js/lib/steel.js','src/js/lib/zepto.js', 'src/js/lib/**/*.js', debugConfig], {
+        gulp.src(['src/js/lib/es5-shim.js','src/js/lib/IE8-polyfill.js','src/js/lib/steel.js','src/js/lib/zepto.js', 'src/js/lib/**/*.js', debugConfig], {
             base: 'src/js/'
         }).pipe($.concat('lib/lib.js')),
         merge2(

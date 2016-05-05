@@ -119,33 +119,32 @@ var onSearch = require('common/channel/onSearch');
 var $ = STK;
 
 module.exports = React.createClass({displayName: "exports",
+    getInitialState:function(){
+        return {
+            searching: false,
+            key:''
+        }
+    },
     componentDidMount:function(){
     },
     DOM_eventFun: { //DOM事件行为容器
         searchInputClick: function() {
-            $.setStyle(this.refs.searchInput, 'display', 'none');
-            $.setStyle(this.refs.searchTextReal, 'display', 'block');
-            this.refs.searchInputReal.focus();
+            this.setState({searching:true});
+            // this.refs.searchInputReal.focus();
         },
-        searchInputChange: function() {
-            var searchText = this.refs.searchInputReal.value;
-            if (searchText) {
-                this.refs.searchButton.innerHTML = '搜索';
-            } else {
-                this.refs.searchButton.innerHTML = '取消';
-            }
-
+        searchInputChange: function(e) {
+            var searchText = e.target.value;
+            this.setState({key:searchText});
         },
         searchButtonClick: function() {
-            var searchText = this.refs.searchInputReal.value;
-            if (this.refs.searchButton.innerHTML === '搜索') {
+            var searchText = this.state.key;
+            if (searchText) {
                 onSearch.fire('search', [searchText]);
-                this.refs.searchButton.innerHTML = '取消';
+                this.setState({key:''});
             } else {
-                $.setStyle(this.refs.searchTextReal, 'display', 'none');
-                $.setStyle(this.refs.searchInput, 'display', 'block');
-                this.refs.searchInputReal.value = '';
-
+                this.setState({
+                    searching:false
+                });
                 onSearch.fire('cancel', []);
             }
 
@@ -155,26 +154,32 @@ module.exports = React.createClass({displayName: "exports",
         var searchTextInit = "查找我想借的书";
         return (
             React.createElement("div", {className: "search"}, 
-                React.createElement("div", {className: "searchInput", ref: "searchInput", 
+                React.createElement("div", {className: "searchInput", 
+                    style: {display:(this.state.searching?"none":'block')}, 
                     onClick: this.DOM_eventFun.searchInputClick.bind(this)}, 
                     React.createElement("img", {className: "searchInputImg", src: "http://js.catfood.wap.grid.sina.com.cn/img/search.png"}), 
                     React.createElement("p", {className: "placeholder"}, searchTextInit)
                 ), 
-                React.createElement("div", {className: "searchTextReal", ref: "searchTextReal", style: {display:"none"}}, 
+                React.createElement("div", {className: "searchTextReal", 
+                    style: {display:(this.state.searching?'block':'none')}}, 
                     React.createElement("img", {className: "searchTextRealImg", src: "http://js.catfood.wap.grid.sina.com.cn/img/search.png"}), 
                     React.createElement("div", {className: "searchInputBorder"}, 
-                        React.createElement("input", {className: "searchInputReal", type: "text", ref: "searchInputReal", maxlength: "30", 
+                        React.createElement("input", {className: "searchInputReal", 
+                            type: "text", maxlength: "30", ref: "searchInputReal", 
+                            value: this.state.key, 
                             onChange: this.DOM_eventFun.searchInputChange.bind(this)})
                     ), 
-                    React.createElement("a", {className: "searchButton", href: "javascript:void(0);", ref: "searchButton", 
-                        onClick: this.DOM_eventFun.searchButtonClick.bind(this)}, " 取消 ")
+                    React.createElement("a", {className: "searchButton", href: "javascript:void(0);", 
+                        onClick: this.DOM_eventFun.searchButtonClick.bind(this)}, 
+                        this.state.key?"确定":"取消"
+                    )
                 )
             )
 
         );
     }
 });
-        
+
 
 });
 steel.d("kit/extra/merge", [],function(require, exports, module) {
@@ -678,6 +683,8 @@ var onBorrow = require('common/channel/onBorrow'); //借书事件
 module.exports=React.createClass({displayName: "exports",
     getInitialState: function(){
         return {
+            loading:false,
+            err:false,
             searching:false,
             search: {
                 page: 1,
@@ -702,13 +709,14 @@ module.exports=React.createClass({displayName: "exports",
         searchClick: function(searchText) { //点击搜索
             this.setState({searching:true,error:false});
             var data = this.state.search;
-            data.key = searchText;            
+            data.key = searchText;
+            // alert("search"+data.key);
             this.ajSearch('search',data);
         },
         cancelSearch: function() { //取消搜索
             this.setState({searching:true,error:false});
             var data = this.state.search;
-            data.key = '';            
+            data.key = '';
             this.ajSearch('search',data);
         }
     },
@@ -735,13 +743,13 @@ module.exports=React.createClass({displayName: "exports",
             _this.objs.objConfirm = confirmUI(arg);
             $.custEvent.add(_this.objs.objConfirm, 'button2Click', _this.bindCustEvtFuns.look);
         },*/
-        
+
     },
     scrollDataList: function() { //滚动到最下触发方法
-        this.setState({loading:true,error:false});
+        // this.setState({loading:true,error:false});
         if (this.props.url == 'booklist') {
             this.ajSearch('scroll_booklist');
-            
+
         } else {
             this.ajSearch('scroll_mybooklist');
         }
@@ -749,7 +757,7 @@ module.exports=React.createClass({displayName: "exports",
     ajSearch: function(api,data) {
         var _this = this;
         if(data){
-            this.setState({search:data});                
+            this.setState({search:data});
         }
         $.common.trans.operate.getTrans(api, {
             'onSuccess': function(data) {
@@ -783,7 +791,7 @@ module.exports=React.createClass({displayName: "exports",
                     break;
                 case '4':
                     return "方法学";
-                    break; 
+                    break;
             }
         }
         function buildOpt(book){
@@ -865,7 +873,7 @@ module.exports=React.createClass({displayName: "exports",
                     React.createElement("a", {href: "http://catfood.wap.grid.sina.com.cn/catfood/bookList"}, React.createElement("span", null, "暂无更多了，去借书"), React.createElement("img", {className: "toBorrow", src: "http://js.catfood.wap.grid.sina.com.cn/img/angle.png"}))
                 )
             );
-        } 
+        }
     },
 
     render: function(){
@@ -883,7 +891,7 @@ module.exports=React.createClass({displayName: "exports",
         );
     }
 });
-            
+
 
 });
 steel.d("components/bookList/index/main", ["../../common/header","../../common/search","../../common/datalist"],function(require, exports, module) {

@@ -573,6 +573,8 @@ var onBorrow = require('common/channel/onBorrow'); //借书事件
 module.exports=React.createClass({displayName: "exports",
     getInitialState: function(){
         return {
+            loading:false,
+            err:false,
             searching:false,
             search: {
                 page: 1,
@@ -597,13 +599,14 @@ module.exports=React.createClass({displayName: "exports",
         searchClick: function(searchText) { //点击搜索
             this.setState({searching:true,error:false});
             var data = this.state.search;
-            data.key = searchText;            
+            data.key = searchText;
+            // alert("search"+data.key);
             this.ajSearch('search',data);
         },
         cancelSearch: function() { //取消搜索
             this.setState({searching:true,error:false});
             var data = this.state.search;
-            data.key = '';            
+            data.key = '';
             this.ajSearch('search',data);
         }
     },
@@ -630,13 +633,13 @@ module.exports=React.createClass({displayName: "exports",
             _this.objs.objConfirm = confirmUI(arg);
             $.custEvent.add(_this.objs.objConfirm, 'button2Click', _this.bindCustEvtFuns.look);
         },*/
-        
+
     },
     scrollDataList: function() { //滚动到最下触发方法
-        this.setState({loading:true,error:false});
+        // this.setState({loading:true,error:false});
         if (this.props.url == 'booklist') {
             this.ajSearch('scroll_booklist');
-            
+
         } else {
             this.ajSearch('scroll_mybooklist');
         }
@@ -644,7 +647,7 @@ module.exports=React.createClass({displayName: "exports",
     ajSearch: function(api,data) {
         var _this = this;
         if(data){
-            this.setState({search:data});                
+            this.setState({search:data});
         }
         $.common.trans.operate.getTrans(api, {
             'onSuccess': function(data) {
@@ -678,7 +681,7 @@ module.exports=React.createClass({displayName: "exports",
                     break;
                 case '4':
                     return "方法学";
-                    break; 
+                    break;
             }
         }
         function buildOpt(book){
@@ -760,7 +763,7 @@ module.exports=React.createClass({displayName: "exports",
                     React.createElement("a", {href: "http://catfood.wap.grid.sina.com.cn/catfood/bookList"}, React.createElement("span", null, "暂无更多了，去借书"), React.createElement("img", {className: "toBorrow", src: "http://js.catfood.wap.grid.sina.com.cn/img/angle.png"}))
                 )
             );
-        } 
+        }
     },
 
     render: function(){
@@ -778,6 +781,6 @@ module.exports=React.createClass({displayName: "exports",
         );
     }
 });
-            
+
 
 });

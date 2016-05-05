@@ -4,7 +4,6 @@
 
 var $CONFIG = window.$CONFIG || {};
 var loadingTpl = require('tpl/common/loading');
-var uiTip = require('ui/tip');
 
 require('components/main/index/ctrl');
 require('components/bookList/index/ctrl');
@@ -32,10 +31,9 @@ steel.config({
     ]
 });
 
-var preview = $('#preview');
 steel.on('stageChange', function(box, renderFromStageCache) {
     var routerType = steel.router.get().type;
-    if ((!preview.length && routerType === 'init') || routerType === 'forward' || routerType === 'new'  || routerType === 'replace') {
+    if ((!document.getElementById('preview') && routerType === 'init') || routerType === 'forward' || routerType === 'new'  || routerType === 'replace') {
         box.innerHTML = loadingTpl({
             text: '加载中...'
         });
@@ -47,10 +45,7 @@ steel.on('renderError', pageError);
 
 function pageError(res) {
     steel.stage.getBox().innerHTML = '';
-    uiTip(res && res.msg || '数据异常', {
-        type: 'warn',
-        autoHide: 0
-    });
+
     if (res && (res.code + '') === '100002') {
         location.href = '/catfood/login?r=' + encodeURIComponent(location.href);
     }
@@ -58,7 +53,6 @@ function pageError(res) {
 
 //监听最后一个模块domready完成事件
 steel.on('allDomReady', function() {
-    preview.hide();
     if (steel.isDebug) {
         return;
     }

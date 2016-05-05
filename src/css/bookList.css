@@ -9,7 +9,7 @@
 
 .search .searchInputBorder{display: inline-block;width: 80%;margin-left:3%;border-radius: 1.24em;background: #4fc8c5;color: #fff;height: 2.4em;}
 .search .searchTextRealImg {display: block;position: absolute;top: 1.4em;left: 5%;width: 1.12em;}
-.search .searchInputReal {display: inline-block;width: 85%;margin-left: 6%;border: none;background: #4fc8c5;outline:none; padding: 0.36em 0 0.36 1em;color: #fff;font-size: 1.2em;}
+.search .searchInputReal {display: inline-block;width: 80%;margin-left: 6%;border: none;background: #4fc8c5;outline:none; padding: .36em 0 .36em 1em;color: #fff;font-size: 1.2em; line-height: 1.2em;}
 .search .searchButton {display: inline-block;margin-left: 2%;text-decoration: none;font: 1.2em bold;color: #fff;}
 
 /*中间内容列表*/

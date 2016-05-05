@@ -7,6 +7,8 @@ var onBorrow = require('common/channel/onBorrow'); //借书事件
 module.exports=React.createClass({
     getInitialState: function(){
         return {
+            loading:false,
+            err:false,
             searching:false,
             search: {
                 page: 1,
@@ -31,13 +33,14 @@ module.exports=React.createClass({
         searchClick: function(searchText) { //点击搜索
             this.setState({searching:true,error:false});
             var data = this.state.search;
-            data.key = searchText;            
+            data.key = searchText;
+            // alert("search"+data.key);
             this.ajSearch('search',data);
         },
         cancelSearch: function() { //取消搜索
             this.setState({searching:true,error:false});
             var data = this.state.search;
-            data.key = '';            
+            data.key = '';
             this.ajSearch('search',data);
         }
     },
@@ -64,13 +67,13 @@ module.exports=React.createClass({
             _this.objs.objConfirm = confirmUI(arg);
             $.custEvent.add(_this.objs.objConfirm, 'button2Click', _this.bindCustEvtFuns.look);
         },*/
-        
+
     },
     scrollDataList: function() { //滚动到最下触发方法
-        this.setState({loading:true,error:false});
+        // this.setState({loading:true,error:false});
         if (this.props.url == 'booklist') {
             this.ajSearch('scroll_booklist');
-            
+
         } else {
             this.ajSearch('scroll_mybooklist');
         }
@@ -78,7 +81,7 @@ module.exports=React.createClass({
     ajSearch: function(api,data) {
         var _this = this;
         if(data){
-            this.setState({search:data});                
+            this.setState({search:data});
         }
         $.common.trans.operate.getTrans(api, {
             'onSuccess': function(data) {
@@ -112,15 +115,15 @@ module.exports=React.createClass({
                     break;
                 case '4':
                     return "方法学";
-                    break; 
+                    break;
             }
         }
         function buildOpt(book){
             switch(book.book_status){
                 case '0':
                     return (
-                        <a className="bookOperatorBorrow bookOperator" 
-                            href="javascript:void(0);" action-type="operatorClick" 
+                        <a className="bookOperatorBorrow bookOperator"
+                            href="javascript:void(0);" action-type="operatorClick"
                             action-data="book_id={book.book_id}&book_status={book.book_status}&detail_call_number={book.detail_call_number}" > 借 </a>
                     );
                     break;
@@ -132,9 +135,9 @@ module.exports=React.createClass({
                     break;
                 case '2':
                     return (
-                        <a className="bookOperatorReturn bookOperator" 
-                            href="javascript:void(0);" 
-                            action-type="operatorClick" 
+                        <a className="bookOperatorReturn bookOperator"
+                            href="javascript:void(0);"
+                            action-type="operatorClick"
                             action-data="book_id={book.book_id}&book_status={book.book_status}&detail_call_number={book.detail_call_number}"> 还 </a>
                     );
                     break;
@@ -149,13 +152,13 @@ module.exports=React.createClass({
                     </div>
                     <div className="bookMsg">
                         <h3 title={bookList[i].book_name}> {bookList[i].book_name} </h3>
-                        <p>{bookList[i].book_press}</p> 
+                        <p>{bookList[i].book_press}</p>
                         <p> {bookList[i].book_author}</p>
                         <br />
                         <p className="bookType">
                             {buildType(bookList[i])}
                         </p>
-                    </div>    
+                    </div>
                     {buildOpt(bookList[i])}
                 </div>
             </li>);
@@ -194,7 +197,7 @@ module.exports=React.createClass({
                     <a href="http://catfood.wap.grid.sina.com.cn/catfood/bookList"><span>暂无更多了，去借书</span><img className="toBorrow" src="http://js.catfood.wap.grid.sina.com.cn/img/angle.png"/></a>
                 </footer>
             );
-        } 
+        }
     },
 
     render: function(){
@@ -212,4 +215,4 @@ module.exports=React.createClass({
         );
     }
 });
-            
+
